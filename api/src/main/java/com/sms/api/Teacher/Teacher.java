@@ -3,8 +3,15 @@ package com.sms.api.Teacher;
 import java.time.LocalDate;
 
 import lombok.Data;
+import jakarta.persistence.*;
+
+
 @Data
+@Entity
+@Table(name = "teachers_table")
 public class Teacher {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long teacher_id;
     private String teacher_firstname;
     private String teacher_lastname;
