@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sms.api.Authentication.DTO.School_account_request;
+import com.sms.api.Authentication.DTO.user_dto;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -21,13 +21,13 @@ public class AuthController {
     }
 
     // Endpoint to register a new school account
-    @PostMapping("/register_school")
-    public School_account_request registerSchoolAccount(@RequestBody School_account_request user) {
-        return authServices.registerSchool(user);
+    @PostMapping("/register")
+    public user_dto register(@RequestBody user_dto user) {
+        return authServices.register(user);
     }
 
     @PostMapping("/login")
-    public List<Map<String, Object>> loginSchoolAccount(@RequestParam String school_email, @RequestParam String school_password) {
-        return authServices.login(school_email, school_password);
+    public List<Map<String, Object>> login(@RequestParam String user_email, @RequestParam String user_password) {
+        return authServices.login(user_email, user_password);
     }
 }
