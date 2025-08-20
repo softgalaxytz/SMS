@@ -9,12 +9,13 @@ import lombok.Data;
 @Table(name = "attendance_table")
 public class Attendance {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long attendance_id;
     private Long student_id;
     private Long class_id;
     private String attendance_status;
     private LocalDateTime attendance_dateTime;
+    private Long user_id;
 
     // Getters and Setters
 }

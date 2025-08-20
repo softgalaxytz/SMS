@@ -13,6 +13,7 @@ public class Classes {
     private String class_name;
     private Long teacher_id;
     private Long subject_id;
+    private Long user_id;
 
     // Getters and Setters
 }
